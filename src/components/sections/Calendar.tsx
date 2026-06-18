@@ -59,7 +59,7 @@ export default function Calendar() {
 
                 <div className="relative w-full" style={{ paddingBottom: '75%' }}>
                   <iframe
-                    src="https://calendar.google.com/calendar/embed?src=dundyhoongnewb%40gmail.com&ctz=America%2FNew_York&bgcolor=%230D1220&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
+                    src="https://calendar.google.com/calendar/embed?src=b0a63a9325b25e0865eb0fbf9cf9dd2cda43bf38cfe35f0f038576418cd7e2c0%40group.calendar.google.com&ctz=America%2FChicago&bgcolor=%230D1220&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
                     className="absolute inset-0 w-full h-full border-0"
                     title="PASO Events Calendar"
                     loading="lazy"
