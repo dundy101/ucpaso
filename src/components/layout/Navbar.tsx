@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react'
 import NextImage from 'next/image'
 
 const links = [
-  { label: 'Events',   href: '/events'   },
+  { label: 'Events',   href: '/#events'   },
   { label: 'Programs', href: '/programs' },
   { label: 'Board',    href: '/board'    },
   { label: 'More',     href: '/more'     },
