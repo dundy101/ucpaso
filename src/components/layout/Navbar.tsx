@@ -2,22 +2,23 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import NextImage from 'next/image'
 
 const links = [
-  { label: 'Events',   href: '/#events'  },
-  { label: 'Programs', href: '/programs' },
-  { label: 'Board',    href: '/board'    },
-  { label: 'More',     href: '/more'     },
-  { label: 'Contact',  href: '/contact'  },
+  { label: 'Events',   href: '/events',   scroll: false },
+  { label: 'Programs', href: '/programs', scroll: false },
+  { label: 'Board',    href: '/board',    scroll: false },
+  { label: 'More',     href: '/more',     scroll: false },
+  { label: 'Contact',  href: '/contact',  scroll: false },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
   const pathname = usePathname()
+  const router   = useRouter()
   const navRef   = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -31,11 +32,36 @@ export default function Navbar() {
     document.body.style.overflow = ''
   }, [pathname])
 
+  // After navigation to home, scroll to #events
+  useEffect(() => {
+    if (pathname === '/') {
+      const hash = window.location.hash
+      if (hash === '#events') {
+        setTimeout(() => {
+          document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
+      }
+    }
+  }, [pathname])
+
   const toggle = () => {
     setOpen(v => {
       document.body.style.overflow = v ? '' : 'hidden'
       return !v
     })
+  }
+
+  const handleEventsClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setOpen(false)
+    document.body.style.overflow = ''
+    if (pathname === '/') {
+      // Already on home page — just scroll
+      document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // Navigate to home then scroll
+      router.push('/#events')
+    }
   }
 
   const isActive = (href: string) =>
@@ -71,25 +97,32 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-1">
-            {links.map(({ label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
-                  isActive(href)
-                    ? 'text-[var(--gold-light)]'
-                    : 'text-[var(--text-2)] hover:text-[var(--text-1)]'
-                }`}
-                aria-current={isActive(href) ? 'page' : undefined}
-              >
-                {label}
-                {isActive(href) && (
-                  <span
-                    className="absolute bottom-0.5 left-4 right-4 h-px bg-[var(--gold)] rounded-full"
-                    aria-hidden
-                  />
-                )}
-              </Link>
+            {links.map(({ label, href, scroll }) => (
+              scroll ? (
+                <button
+                  key={href}
+                  onClick={handleEventsClick}
+                  className="relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md text-[var(--text-2)] hover:text-[var(--text-1)]"
+                >
+                  {label}
+                </button>
+              ) : (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
+                    isActive(href)
+                      ? 'text-[var(--gold-light)]'
+                      : 'text-[var(--text-2)] hover:text-[var(--text-1)]'
+                  }`}
+                  aria-current={isActive(href) ? 'page' : undefined}
+                >
+                  {label}
+                  {isActive(href) && (
+                    <span className="absolute bottom-0.5 left-4 right-4 h-px bg-[var(--gold)] rounded-full" aria-hidden />
+                  )}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -123,19 +156,29 @@ export default function Navbar() {
         >
           <div className="container pb-8 pt-4 border-t border-white/[0.06]">
             <nav aria-label="Mobile navigation" className="flex flex-col gap-0.5">
-              {links.map(({ label, href }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={`flex items-center h-11 px-3 rounded-lg text-base font-medium transition-colors ${
-                    isActive(href)
-                      ? 'text-[var(--gold-light)] bg-[var(--gold-sub)]'
-                      : 'text-[var(--text-2)] hover:text-[var(--text-1)] hover:bg-[var(--fog)]'
-                  }`}
-                  aria-current={isActive(href) ? 'page' : undefined}
-                >
-                  {label}
-                </Link>
+              {links.map(({ label, href, scroll }) => (
+                scroll ? (
+                  <button
+                    key={href}
+                    onClick={handleEventsClick}
+                    className="flex items-center h-11 px-3 rounded-lg text-base font-medium transition-colors text-[var(--text-2)] hover:text-[var(--text-1)] hover:bg-[var(--fog)]"
+                  >
+                    {label}
+                  </button>
+                ) : (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`flex items-center h-11 px-3 rounded-lg text-base font-medium transition-colors ${
+                      isActive(href)
+                        ? 'text-[var(--gold-light)] bg-[var(--gold-sub)]'
+                        : 'text-[var(--text-2)] hover:text-[var(--text-1)] hover:bg-[var(--fog)]'
+                    }`}
+                    aria-current={isActive(href) ? 'page' : undefined}
+                  >
+                    {label}
+                  </Link>
+                )
               ))}
               <div className="mt-3 pt-4 border-t border-white/[0.06]">
                 <Link
