@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import NextImage from 'next/image'
 
 const links = [
-  { label: 'Events',   href: '/#events'  },
+  { label: 'Events',   href: '/events'   },
   { label: 'Programs', href: '/programs' },
   { label: 'Board',    href: '/board'    },
   { label: 'More',     href: '/more'     },
@@ -18,6 +18,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
   const pathname = usePathname()
+  const router   = useRouter()
   const navRef   = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -38,32 +39,36 @@ export default function Navbar() {
     })
   }
 
+  const scrollToEvents = () => {
+    const el = document.getElementById('events')
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }
+
   const handleEventsClick = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpen(false)
     document.body.style.overflow = ''
-    const scrollToEvents = () => {
-      const el = document.getElementById('events')
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
-    }
     if (pathname === '/') {
+      // Already home — just scroll, don't change URL
       scrollToEvents()
     } else {
-      window.location.href = '/'
-      // Wait for page to load then scroll
-      const interval = setInterval(() => {
-        const el = document.getElementById('events')
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' })
-          clearInterval(interval)
-        }
-      }, 100)
-      setTimeout(() => clearInterval(interval), 3000)
+      // Go home first, then scroll after page loads
+      router.push('/')
+      setTimeout(scrollToEvents, 600)
+    }
+  }
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      router.push('/')
     }
   }
 
   const isActive = (href: string) =>
-    href === '/' ? pathname === '/' : href.startsWith('/#') ? false : pathname.startsWith(href)
+    href === '/' ? pathname === '/' : pathname.startsWith(href)
 
   return (
     <>
@@ -78,7 +83,12 @@ export default function Navbar() {
       >
         <div className="container flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group flex-shrink-0" aria-label="PASO home">
+          <a
+            href="/"
+            onClick={handleLogoClick}
+            className="flex items-center gap-3 group flex-shrink-0"
+            aria-label="PASO home"
+          >
             <div className="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden">
               <NextImage
                 src="/images/pasologo.jpg"
@@ -91,7 +101,7 @@ export default function Navbar() {
               <span className="text-[var(--text-1)] font-display font-medium text-sm tracking-wide">PASO</span>
               <span className="text-[var(--text-3)] font-sans text-[10px] tracking-widest2 uppercase mt-px">University of Cincinnati</span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop nav */}
           <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-1">
