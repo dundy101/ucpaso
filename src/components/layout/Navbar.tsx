@@ -55,13 +55,8 @@ export default function Navbar() {
     e.preventDefault()
     setOpen(false)
     document.body.style.overflow = ''
-    if (pathname === '/') {
-      // Already on home page — just scroll
-      document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      // Navigate to home then scroll
-      router.push('/#events')
-    }
+    // Always go to /events page
+    router.push('/events')
   }
 
   const isActive = (href: string) =>
