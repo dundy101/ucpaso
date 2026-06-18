@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react'
 import NextImage from 'next/image'
 
 const links = [
-  { label: 'Events',   href: '/#events'   },
+  { label: 'Events',   href: '/#events'  },
   { label: 'Programs', href: '/programs' },
   { label: 'Board',    href: '/board'    },
   { label: 'More',     href: '/more'     },
@@ -38,8 +38,32 @@ export default function Navbar() {
     })
   }
 
+  const handleEventsClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setOpen(false)
+    document.body.style.overflow = ''
+    const scrollToEvents = () => {
+      const el = document.getElementById('events')
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (pathname === '/') {
+      scrollToEvents()
+    } else {
+      window.location.href = '/'
+      // Wait for page to load then scroll
+      const interval = setInterval(() => {
+        const el = document.getElementById('events')
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+          clearInterval(interval)
+        }
+      }, 100)
+      setTimeout(() => clearInterval(interval), 3000)
+    }
+  }
+
   const isActive = (href: string) =>
-    href === '/' ? pathname === '/' : pathname.startsWith(href)
+    href === '/' ? pathname === '/' : href.startsWith('/#') ? false : pathname.startsWith(href)
 
   return (
     <>
@@ -75,6 +99,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
+                onClick={label === 'Events' ? handleEventsClick : undefined}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
                   isActive(href)
                     ? 'text-[var(--gold-light)]'
@@ -127,6 +152,7 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
+                  onClick={label === 'Events' ? handleEventsClick : undefined}
                   className={`flex items-center h-11 px-3 rounded-lg text-base font-medium transition-colors ${
                     isActive(href)
                       ? 'text-[var(--gold-light)] bg-[var(--gold-sub)]'
