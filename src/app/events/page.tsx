@@ -22,7 +22,6 @@ const events = [
     tagVariant: 'gold' as const,
     href: '/events/mock-debut',
     live: true,
-    icon: '🌊',
   },
   {
     title: 'WorldWide',
@@ -34,7 +33,6 @@ const events = [
     tagVariant: 'dim' as const,
     href: '/events/worldwide',
     live: false,
-    icon: '🌏',
   },
 ]
 
@@ -53,9 +51,8 @@ export default function EventsPage() {
             {events.map(ev => (
               <Link key={ev.title} href={ev.href} className="group block mb-4">
                 <div className="glass glass-hover rounded-[var(--radius-xl)] p-7 lg:p-9 flex flex-col lg:flex-row lg:items-start gap-6">
-                  {/* Icon + date */}
-                  <div className="flex-shrink-0">
-                    <div className="text-4xl mb-3">{ev.icon}</div>
+                  {/* Date card — centered */}
+                  <div className="flex-shrink-0 flex justify-center lg:justify-start">
                     <div className="glass rounded-[var(--radius)] px-3 py-2 text-center w-20">
                       <div className="text-[var(--text-4)] text-[9px] uppercase tracking-widest">Date</div>
                       <div className="text-[var(--text-1)] font-sans text-xs mt-0.5 leading-snug">
