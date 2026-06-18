@@ -36,7 +36,7 @@ export default function Hero() {
 
       {/* ── Cinematic overlays ── */}
       {/* Left-heavy gradient so text stays readable */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(8,11,20,0.93)] via-[rgba(8,11,20,0.60)] to-[rgba(8,11,20,0.20)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(8,11,20,0.70)] via-[rgba(8,11,20,0.35)] to-[rgba(8,11,20,0.10)]" />
       {/* Bottom fade into site bg */}
       <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-transparent to-transparent" />
       {/* Top vignette */}
