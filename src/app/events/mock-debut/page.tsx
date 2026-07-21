@@ -81,11 +81,6 @@ export default function MockDebutPage() {
               </h1>
             </FadeIn>
 
-            <FadeIn delay={0.22}>
-              <p className="text-[var(--text-2)] text-xl lg:text-2xl font-display italic mt-3 mb-8">
-                Under the Sea
-              </p>
-            </FadeIn>
 
             {/* Event quick facts */}
             <FadeIn delay={0.3}>
