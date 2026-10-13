@@ -390,31 +390,23 @@ export default function MockDebutPage() {
       {/* ════════════════════════════════════════
           PHOTO GALLERY (placeholder)
       ════════════════════════════════════════ */}
-      <section className="section" aria-label="Photo gallery">
-        <div className="container">
-          <FadeIn>
-            <Label>Gallery</Label>
-            <h2 className="font-display font-medium text-4xl lg:text-5xl text-[var(--text-1)] mt-2 mb-3">
-              Past Moments
-            </h2>
-            <p className="text-[var(--text-3)] text-sm mb-10 max-w-md">
-              A glimpse into previous Mock Debut celebrations and our members' personal debut milestones.
-            </p>
+          <section className="section" aria-label="Photo gallery">
+              <div className="container">
+                  <FadeIn>
+                      <Label>Gallery</Label>
+                      <h2 className="font-display font-medium text-4xl lg:text-5xl text-[var(--text-1)] mt-2 mb-3">
+                          Past Moments
+                      </h2>
+                      <p className="text-[var(--text-3)] text-sm mb-10 max-w-md">
+                          A glimpse into previous Mock Debut celebrations and our members' personal debut milestones.
+                      </p>
+                  </FadeIn>
 
                   <FadeIn delay={0.1}>
                       <Gallery photos={galleryPhotos} />
                   </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn delay={0.2}>
-            <p className="text-[var(--text-4)] text-xs text-center italic mt-6">
-              Replace placeholder blocks with real images in{' '}
-              <code className="text-[var(--gold-dim)]">src/app/events/mock-debut/page.tsx</code>
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+              </div>
+          </section>
 
       {/* ════════════════════════════════════════
           CONTACT
