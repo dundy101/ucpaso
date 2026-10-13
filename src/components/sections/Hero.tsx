@@ -99,7 +99,7 @@ export default function Hero() {
           className="flex flex-wrap items-center gap-4"
         >
           <Link
-            href="https://getinvolved.uc.edu"
+            href="https://getinvolved.uc.edu/organization/paso"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 h-11 px-7 rounded-full bg-[var(--gold)] text-[var(--ink)] text-sm font-semibold hover:bg-[var(--gold-light)] transition-all duration-200 shadow-[0_0_28px_rgba(201,160,32,0.2)] hover:shadow-[0_0_40px_rgba(201,160,32,0.35)] active:scale-[0.97]"

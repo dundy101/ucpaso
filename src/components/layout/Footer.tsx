@@ -88,7 +88,7 @@ export default function Footer() {
                 <a href="https://instagram.com/uc_paso" target="_blank" rel="noopener noreferrer" className="text-[var(--text-3)] text-sm hover:text-[var(--text-1)] transition-colors">@uc_paso</a>
               </li>
               <li className="pt-1">
-                <a href="https://getinvolved.uc.edu" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[var(--gold)] text-sm hover:text-[var(--gold-light)] transition-colors">
+                <a href="https://getinvolved.uc.edu/organization/paso" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[var(--gold)] text-sm hover:text-[var(--gold-light)] transition-colors">
                   GetInvolved UC <ArrowUpRight size={12} />
                 </a>
               </li>

@@ -21,9 +21,9 @@ const itinerary = [
   { time: '6:25 PM', event: '9 Candles',                     note: 'Traditional ceremony' },
   { time: '6:35 PM', event: 'Cake Announcement',             note: '' },
   { time: '6:40 PM', event: 'Game #1 — Bring Me',            note: '' },
-  { time: '6:50 PM', event: 'Ritmo Performance',             note: '' },
+  { time: '6:50 PM', event: 'Kawayan Performance',             note: '' },
   { time: '7:00 PM', event: 'Game #2',                       note: '' },
-  { time: '7:10 PM', event: 'Ritmo Performance',             note: '' },
+  { time: '7:10 PM', event: 'La Jota Performance',             note: '' },
   { time: '7:20 PM', event: 'Conclusion',                    note: '' },
 ]
 
@@ -170,8 +170,8 @@ export default function MockDebutPage() {
                 </div>
                 <h3 className="font-sans font-medium text-[var(--text-1)] text-sm group-hover:text-[var(--gold-light)] transition-colors">Afterset Tickets</h3>
                 <p className="text-[var(--text-3)] text-xs leading-relaxed flex-1">
-                  Continue the night at the afterset — November 7 at 10:00 PM.
-                  <br /><span className="text-[var(--text-4)] italic">Location TBD</span>
+                  Continue the night at the afterset — November 7 at 11:00 PM.
+                  <br /><span className="text-[var(--text-4)] italic">Location: The Comet</span>
                 </p>
                 <span className="text-[#7AADFF] text-xs font-medium group-hover:underline">Get Tickets →</span>
               </a>
@@ -358,7 +358,7 @@ export default function MockDebutPage() {
                 </div>
                 <div className="flex-1 pb-4">
                   <p className="text-[var(--gold-light)] font-sans font-semibold text-sm">Afterset Begins</p>
-                  <p className="text-[var(--text-3)] text-xs mt-0.5">Location TBD — tickets required</p>
+                  <p className="text-[var(--text-3)] text-xs mt-0.5">Location: The Comet — tickets required</p>
                   <Btn
                     href="https://forms.gle/2Bw2bi366UPn8YLt5"
                     variant="outline"

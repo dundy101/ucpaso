@@ -92,7 +92,7 @@ export default function ContactPage() {
               <FadeIn delay={0.25}>
                 <div className="mt-6">
                   <Btn
-                    href="https://getinvolved.uc.edu"
+                    href="https://getinvolved.uc.edu/organization/paso"
                     variant="outline"
                     size="md"
                     external

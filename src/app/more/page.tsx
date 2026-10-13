@@ -126,7 +126,7 @@ export default function MorePage() {
               </FadeIn>
               <Stagger stagger={0.07} delay={0.1} className="space-y-3">
                 {[
-                  { label: 'PASO on GetInvolved UC', href: 'https://getinvolved.uc.edu', note: 'Official university listing' },
+                  { label: 'PASO on GetInvolved UC', href: 'https://getinvolved.uc.edu/organization/paso', note: 'Official university listing' },
                   { label: '@uc_paso on Instagram', href: 'https://instagram.com/uc_paso', note: 'Latest news & photos' },
                   { label: 'UC Student Activities', href: 'https://uc.edu', note: 'University student life resources' },
                   { label: 'Contact the Board', href: 'mailto:uc.paso17@gmail.com', note: 'uc.paso17@gmail.com' },

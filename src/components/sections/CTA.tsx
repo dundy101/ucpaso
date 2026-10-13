@@ -52,7 +52,7 @@ export default function CTA() {
         <FadeIn delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link
-              href="https://getinvolved.uc.edu"
+              href="https://getinvolved.uc.edu/organization/paso"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-[var(--gold)] text-[var(--ink)] text-sm font-bold hover:bg-[var(--gold-light)] transition-all duration-200 shadow-[0_0_32px_rgba(201,160,32,0.2)] hover:shadow-[0_0_48px_rgba(201,160,32,0.35)] active:scale-[0.97]"

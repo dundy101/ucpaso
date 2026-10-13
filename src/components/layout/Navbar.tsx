@@ -83,7 +83,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="https://getinvolved.uc.edu"
+              href="https://getinvolved.uc.edu/organization/paso"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:inline-flex items-center gap-1.5 h-9 px-5 rounded-full border border-[rgba(201,160,32,0.35)] text-[var(--gold)] text-sm font-medium hover:bg-[var(--gold-sub)] hover:border-[var(--gold)] transition-all duration-200"
@@ -125,7 +125,7 @@ export default function Navbar() {
               ))}
               <div className="mt-3 pt-4 border-t border-white/[0.06]">
                 <Link
-                  href="https://getinvolved.uc.edu"
+                  href="https://getinvolved.uc.edu/organization/paso"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center h-11 rounded-full border border-[rgba(201,160,32,0.35)] text-[var(--gold)] text-sm font-medium hover:bg-[var(--gold-sub)] transition-all"
