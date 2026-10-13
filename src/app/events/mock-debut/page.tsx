@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Countdown from '@/components/ui/Countdown'
 import { FadeIn, FadeInSide, Stagger } from '@/components/motion'
 import { Label, Btn, Tag, ExtLink } from '@/components/ui'
+import Gallery from '@/components/ui/Gallery'
 import { Calendar, Clock, MapPin, Utensils, Shirt, Car, ExternalLink, Mail, Instagram, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -25,6 +26,17 @@ const itinerary = [
   { time: '7:00 PM', event: 'Game #2',                       note: '' },
   { time: '7:10 PM', event: 'La Jota Performance',             note: '' },
   { time: '7:20 PM', event: 'Conclusion',                    note: '' },
+]
+
+const galleryPhotos = [
+    { src: '/images/mock-debut/debutante.jpg', alt: 'The debutante seated on stage in a magenta ball gown, surrounded by orchid arrangements' },
+    { src: '/images/mock-debut/group-roses.jpg', alt: 'Guests posing with purple roses in front of a vine-covered backdrop' },
+    { src: '/images/mock-debut/masquerade-group.jpg', alt: 'Guests in masquerade masks making heart signs in front of a balloon arch' },
+    { src: '/images/mock-debut/tinikling-overhead.jpg', alt: 'Overhead view of a bamboo pole dance surrounded by a crowd of guests' },
+    { src: '/images/mock-debut/tinikling.jpg', alt: 'Dancers stepping between bamboo poles while guests watch' },
+    { src: '/images/mock-debut/cultural-dance.jpg', alt: 'Performers carrying bamboo poles during a cultural dance' },
+    { src: '/images/mock-debut/dinner-hall.jpg', alt: 'Guests dining at round tables in the TUC atrium' },
+    { src: '/images/mock-debut/table-guests.jpg', alt: 'A table of smiling guests at the event' },
 ]
 
 export default function MockDebutPage() {
@@ -388,26 +400,10 @@ export default function MockDebutPage() {
             <p className="text-[var(--text-3)] text-sm mb-10 max-w-md">
               A glimpse into previous Mock Debut celebrations and our members' personal debut milestones.
             </p>
-          </FadeIn>
 
-          {/* Gallery grid — placeholder blocks */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <FadeIn key={i} delay={i * 0.04}>
-                <div
-                  className={`glass rounded-[var(--radius)] overflow-hidden ${
-                    i === 0 ? 'row-span-2 col-span-1 lg:col-span-1' : ''
-                  }`}
-                  style={{ paddingBottom: i === 0 ? '200%' : '100%', position: 'relative' }}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-[var(--text-4)] text-[10px] uppercase tracking-wider text-center px-3">
-                      {i < 5 ? 'Past Mock Debut' : "Member's Debut"}
-                      <br />Photo {i + 1}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
+                  <FadeIn delay={0.1}>
+                      <Gallery photos={galleryPhotos} />
+                  </FadeIn>
             ))}
           </div>
 
