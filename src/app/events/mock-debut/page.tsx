@@ -151,6 +151,26 @@ export default function MockDebutPage() {
             </h2>
           </FadeIn>
 
+                  {/* Date & Time */}
+                  <FadeIn>
+                      <div className="glass rounded-[var(--radius-lg)] p-6 flex flex-col gap-3 h-full">
+                          <div className="w-9 h-9 rounded-xl bg-[rgba(255,255,255,0.04)] flex items-center justify-center">
+                              <Clock size={16} className="text-[var(--text-2)]" strokeWidth={1.5} />
+                          </div>
+                          <h3 className="font-sans font-medium text-[var(--text-1)] text-sm">Date & Time</h3>
+                          <p className="text-[var(--text-2)] text-sm font-medium">November 7, 2026</p>
+                          <p className="text-[var(--text-3)] text-xs leading-relaxed flex-1">
+                              Doors open at 4:00 PM. The show begins at 5:00 PM.
+                          </p>
+                          <a
+                              href="#itinerary"
+                              className="mt-auto inline-flex items-center gap-1.5 text-[var(--gold)] text-xs font-medium hover:text-[var(--gold-light)] transition-colors"
+                          >
+                              See the full programme &rarr;
+                          </a>
+                      </div>
+                  </FadeIn>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* RSVP */}
             <FadeIn delay={0.05}>
@@ -205,7 +225,7 @@ export default function MockDebutPage() {
 
             {/* Catering */}
             <FadeIn delay={0.2}>
-              <div className="glass rounded-[var(--radius-lg)] p-6 flex flex-col gap-3 h-full sm:col-span-2 lg:col-span-1">
+              <div className="glass rounded-[var(--radius-lg)] p-6 flex flex-col gap-3 h-full">
                 <div className="w-9 h-9 rounded-xl bg-[rgba(255,255,255,0.04)] flex items-center justify-center">
                   <Utensils size={16} className="text-[var(--text-2)]" strokeWidth={1.5} />
                 </div>
@@ -319,7 +339,7 @@ export default function MockDebutPage() {
       {/* ════════════════════════════════════════
           ITINERARY
       ════════════════════════════════════════ */}
-      <section className="section bg-[var(--ink-50)] relative" aria-label="Event itinerary">
+      <section id="itinerary" className="section bg-[var(--ink-50)] relative scroll-mt-20" aria-label="Event itinerary">
         <div className="absolute top-0 inset-x-0 h-px rule-gold" />
         <div className="container max-w-3xl">
           <FadeIn>
