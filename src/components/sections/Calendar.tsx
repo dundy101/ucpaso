@@ -7,7 +7,7 @@ const upcoming = [
   {
     month: 'NOV', day: '7', year: '2026',
     title: 'Mock Debut 2026',
-    subtitle: 'Under the Sea',
+    subtitle: 'Perlas ng Silanganan',
     time: '5:00 PM', location: 'TUC Great Hall',
     tag: 'Flagship', href: '/events/mock-debut',
     live: true,

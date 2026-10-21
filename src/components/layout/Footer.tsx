@@ -22,12 +22,13 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
-              <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden">
+              <div className="relative w-[88px] h-12 flex-shrink-0">
                 <NextImage
-                  src="/images/pasologo.jpg"
+                  src="/images/pasologo.png"
                   alt="PASO logo"
                   fill
-                  className="object-cover"
+                  sizes="88px"
+                  className="object-contain"
                 />
               </div>
               <div className="leading-none">

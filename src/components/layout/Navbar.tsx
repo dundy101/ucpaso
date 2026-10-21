@@ -54,8 +54,8 @@ export default function Navbar() {
       >
         <div className="container flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0" aria-label="PASO home">
-            <div className="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden">
-              <NextImage src="/images/pasologo.jpg" alt="PASO logo" fill className="object-cover" />
+            <div className="relative w-[73px] h-10 flex-shrink-0">
+              <NextImage src="/images/pasologo.png" alt="PASO logo" fill sizes="73px" className="object-contain" priority />
             </div>
             <div className="hidden sm:flex flex-col leading-none">
               <span className="text-[var(--text-1)] font-display font-medium text-sm tracking-wide">PASO</span>

@@ -6,7 +6,7 @@ import { ArrowRight, Calendar, MapPin } from 'lucide-react'
 const events = [
   {
     title: 'Mock Debut 2026',
-    theme: 'Under the Sea',
+    theme: 'Perlas ng Silanganan',
     date:  'November 7, 2026',
     time:  'Doors 4 PM · Show 5 PM',
     venue: 'TUC Great Hall, Cincinnati',

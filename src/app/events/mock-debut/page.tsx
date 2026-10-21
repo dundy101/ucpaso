@@ -8,7 +8,7 @@ import { Calendar, Clock, MapPin, Utensils, Shirt, Car, ExternalLink, Mail, Inst
 
 export const metadata: Metadata = {
   title: 'Mock Debut 2026',
-  description: 'Mock Debut 2026: Under the Sea — November 7, 2026 at the TUC Great Hall. PASO\'s fifth annual Filipino debut celebration at UC.',
+  description: 'Mock Debut 2026: Perlas ng Silanganan — November 7, 2026 at the TUC Great Hall. PASO\'s fifth annual Filipino debut celebration at UC.',
 }
 
 const itinerary = [

@@ -21,7 +21,7 @@ const history = [
   { year: '2019', milestone: 'First Mock Debut held at UC — a landmark event that would become PASO\'s most beloved annual tradition.' },
   { year: '2021', milestone: 'PASO adapts through the pandemic, hosting virtual cultural events to keep community alive.' },
   { year: '2023', milestone: 'Record membership year. PASO expands programming with new leadership and community outreach initiatives.' },
-  { year: '2026', milestone: 'Mock Debut 2026: Under the Sea — the fifth year of this flagship event at the TUC Great Hall.' },
+  { year: '2026', milestone: 'Mock Debut 2026: Perlas ng Silanganan — the fifth year of this flagship event at the TUC Great Hall.' },
 ]
 
 function FAQItem({ q, a }: { q: string; a: string }) {
