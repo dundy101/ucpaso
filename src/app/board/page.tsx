@@ -44,7 +44,7 @@ const initials = (name: string) =>
 
 function MemberCard({ m }: { m: BoardMember }) {
   return (
-    <div className="glass glass-hover rounded-[var(--radius-lg)] p-4 flex flex-col gap-4 group">
+    <div className="glass glass-hover rounded-[var(--radius-lg)] p-4 flex flex-col gap-4 group h-full">
       <div className="relative w-full aspect-[3/4] rounded-[var(--radius)] bg-gradient-to-br from-[var(--ink-100)] to-[var(--ink-50)] flex items-center justify-center border border-[var(--text-4)] group-hover:border-[rgba(201,160,32,0.12)] transition-colors overflow-hidden">
         {m.photo ? (
           <NextImage
